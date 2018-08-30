@@ -4,7 +4,7 @@ Purified fields for Django ORM
 
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text
 
 from purifier import HTMLPurifier
 
@@ -25,7 +25,7 @@ class PurifyedCharField(models.CharField):
             return value
         purifier = HTMLPurifier(self._white_list)
         value = purifier.feed(value)
-        return smart_unicode(value)
+        return smart_text(value)
 
 
 class PurifyedTextField(models.TextField):
@@ -44,7 +44,7 @@ class PurifyedTextField(models.TextField):
             return value
         purifier = HTMLPurifier(self._white_list)
         value = purifier.feed(value)
-        return smart_unicode(value)
+        return smart_text(value)
 
     def get_prep_value(self, value):
         value = super(PurifyedTextField, self).get_prep_value(value)
