@@ -6,7 +6,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.encoding import smart_text
 
-from purifier import HTMLPurifier
+from HTMLParser import HTMLParser
 
 
 class PurifyedCharField(models.CharField):
