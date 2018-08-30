@@ -4,8 +4,7 @@ Purified fields for Django forms
 
 from django import forms
 
-from purifier import HTMLPurifier
-
+from HTMLParser import HTMLParser
 
 class PurifyedCharField(forms.CharField):
     """
