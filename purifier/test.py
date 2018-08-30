@@ -5,7 +5,7 @@ This is not doc- or unit tests.
 """
 
 import time
-from purifier import HTMLPurifier
+from HTMLParser import HTMLParser
 
 try:
     import bleach
